@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:,">
+  <title>LitSeek 文献与资料检索</title>
+  <link rel="stylesheet" href="/style.css?v=2">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>LitSeek <span class="subtitle">文献与资料混合检索</span></h1>
+      <div class="health-indicator" id="healthIndicator" title="连接状态">
+        <span class="dot" id="healthDot"></span>
+        <span class="health-text" id="healthText">检测中…</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="search-section">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="输入关键词或自然语言查询…" autocomplete="off">
+        <div class="search-controls">
+          <div class="mode-group">
+            <button class="mode-btn active" data-mode="hybrid">混合检索</button>
+            <button class="mode-btn" data-mode="vector">语义检索</button>
+            <button class="mode-btn" data-mode="fulltext">关键词检索</button>
+          </div>
+          <div class="filter-group">
+            <select id="sourceFilter">
+              <option value="">全部类型</option>
+              <option value="paper">论文 paper</option>
+              <option value="note">笔记 note</option>
+              <option value="lab">实验 lab</option>
+              <option value="book">资料 book</option>
+            </select>
+            <select id="topicFilter">
+              <option value="">全部主题</option>
+            </select>
+            <select id="topKSelect">
+              <option value="3">Top 3</option>
+              <option value="6" selected>Top 6</option>
+              <option value="10">Top 10</option>
+            </select>
+          </div>
+          <button class="search-btn" id="searchBtn">搜索</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="content-layout">
+      <section class="results-section" id="resultsSection">
+        <div class="empty-state" id="emptyState">
+          <p>输入关键词开始检索文献与资料</p>
+          <p class="hint">支持语义检索、关键词检索和混合检索三种模式</p>
+        </div>
+        <div class="results-header" id="resultsHeader" style="display:none">
+          <span id="resultsCount"></span>
+          <span id="resultsMode"></span>
+        </div>
+        <div class="results-list" id="resultsList"></div>
+        <div class="error-state" id="errorState" style="display:none"></div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="card stats-card">
+          <h3>数据概览</h3>
+          <div id="statsContent">
+            <p class="muted">加载中…</p>
+          </div>
+          <button class="action-btn" id="seedBtn">导入示例语料</button>
+        </div>
+
+        <div class="card add-card">
+          <h3>新增资料</h3>
+          <form id="addForm">
+            <input type="text" id="addTitle" placeholder="标题" required>
+            <div class="form-row">
+              <select id="addSource" required>
+                <option value="paper">论文</option>
+                <option value="note">笔记</option>
+                <option value="lab">实验</option>
+                <option value="book">资料</option>
+              </select>
+              <select id="addTopic" required>
+                <option value="database">database</option>
+                <option value="rag">rag</option>
+                <option value="vector-search">vector-search</option>
+                <option value="nlp">nlp</option>
+                <option value="machine-learning">machine-learning</option>
+                <option value="workflow">workflow</option>
+              </select>
+            </div>
+            <textarea id="addText" placeholder="正文内容…" rows="4" required></textarea>
+            <button type="submit" class="action-btn">提交入库</button>
+          </form>
+          <div id="addResult" class="form-result"></div>
+        </div>
+
+        <div class="card docs-card">
+          <h3>已入库资料 <button class="link-btn" id="refreshDocs">刷新</button></h3>
+          <div id="docsList" class="docs-list"></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>LitSeek · seekdb 向量 + 全文 + 标量混合检索演示</p>
+  </footer>
+
+  <script src="/app.js?v=2"></script>
+</body>
+</html>

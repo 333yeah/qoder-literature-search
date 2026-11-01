@@ -1,0 +1,267 @@
+{
+  "stats": {
+    "total": 18,
+    "by_source": {
+      "note": 7,
+      "paper": 4,
+      "lab": 4,
+      "book": 3
+    },
+    "by_topic": {
+      "database": 4,
+      "rag": 4,
+      "vector-search": 4,
+      "nlp": 3,
+      "machine-learning": 2,
+      "workflow": 1
+    }
+  },
+  "cases": [
+    {
+      "mode": "hybrid",
+      "query": "检索增强生成",
+      "source": null,
+      "topic": null,
+      "total": 3,
+      "results": [
+        {
+          "rank": 1,
+          "title": "检索增强生成 RAG 综述",
+          "source": "paper",
+          "topic": "rag",
+          "text": "检索增强生成系统先把文档切分成片段，为每个片段生成向量存入向量数据库；用户提问时先做语义检索召回相关上下文，再交给大模型据此生成答案，从而降低幻觉并保留可追溯的出处。",
+          "distance": 0.2128,
+          "ft_score": 3.0829,
+          "rrf": 0.03279,
+          "vector_rank": 1,
+          "fulltext_rank": 1
+        },
+        {
+          "rank": 2,
+          "title": "知识库问答资料整理",
+          "source": "book",
+          "topic": "rag",
+          "text": "企业知识库问答通常包含文档解析、分段、向量化、索引构建、检索和答案生成几个环节；维护阶段需要处理文档更新、过期片段删除以及新增资料的增量入库。",
+          "distance": 0.3277,
+          "ft_score": 1.1314,
+          "rrf": 0.03226,
+          "vector_rank": 2,
+          "fulltext_rank": 2
+        },
+        {
+          "rank": 3,
+          "title": "实验记录：分词错误案例",
+          "source": "lab",
+          "topic": "nlp",
+          "text": "实验记录：观察到若干领域术语被切成无意义单字组合，导致全文检索漏召；补充自定义词典后，术语查询的命中率明显提升，说明分词质量直接决定检索上限。",
+          "distance": 0.5524,
+          "ft_score": 0.2087,
+          "rrf": 0.03078,
+          "vector_rank": 6,
+          "fulltext_rank": 4
+        }
+      ]
+    },
+    {
+      "mode": "vector",
+      "query": "如何减少大模型生成答案时的幻觉",
+      "source": null,
+      "topic": null,
+      "total": 3,
+      "results": [
+        {
+          "rank": 1,
+          "title": "检索增强生成 RAG 综述",
+          "source": "paper",
+          "topic": "rag",
+          "text": "检索增强生成系统先把文档切分成片段，为每个片段生成向量存入向量数据库；用户提问时先做语义检索召回相关上下文，再交给大模型据此生成答案，从而降低幻觉并保留可追溯的出处。",
+          "distance": 0.2352,
+          "ft_score": null,
+          "rrf": null,
+          "vector_rank": 1,
+          "fulltext_rank": null
+        },
+        {
+          "rank": 2,
+          "title": "知识库问答资料整理",
+          "source": "book",
+          "topic": "rag",
+          "text": "企业知识库问答通常包含文档解析、分段、向量化、索引构建、检索和答案生成几个环节；维护阶段需要处理文档更新、过期片段删除以及新增资料的增量入库。",
+          "distance": 0.3106,
+          "ft_score": null,
+          "rrf": null,
+          "vector_rank": 2,
+          "fulltext_rank": null
+        },
+        {
+          "rank": 3,
+          "title": "索引与查询计划实验记录",
+          "source": "lab",
+          "topic": "database",
+          "text": "实验记录：为大表增加合适的二级索引后，等值查询耗时明显下降；但索引会拖慢写入，需要在读写比例之间权衡。本次对比了全表扫描、主键索引和联合索引三种计划。",
+          "distance": 0.4012,
+          "ft_score": null,
+          "rrf": null,
+          "vector_rank": 3,
+          "fulltext_rank": null
+        }
+      ]
+    },
+    {
+      "mode": "fulltext",
+      "query": "事务 隔离 级别",
+      "source": null,
+      "topic": null,
+      "total": 2,
+      "results": [
+        {
+          "rank": 1,
+          "title": "事务隔离级别梳理",
+          "source": "note",
+          "topic": "database",
+          "text": "事务隔离级别由低到高是读未提交、读已提交、可重复读、串行化，分别解决脏读、不可重复读和幻读问题；关系型数据库默认级别需要结合业务一致性要求选择。",
+          "distance": null,
+          "ft_score": 3.3121,
+          "rrf": null,
+          "vector_rank": null,
+          "fulltext_rank": 1
+        },
+        {
+          "rank": 2,
+          "title": "OceanBase 分布式架构要点",
+          "source": "paper",
+          "topic": "database",
+          "text": "OceanBase 是一款分布式关系型数据库，采用多副本 Paxos 复制保证高可用，支持水平扩展与强一致事务，存储层基于 LSM 结构组织数据，适合核心交易系统的在线处理。",
+          "distance": null,
+          "ft_score": 0.962,
+          "rrf": null,
+          "vector_rank": null,
+          "fulltext_rank": 2
+        }
+      ]
+    },
+    {
+      "mode": "hybrid",
+      "query": "向量索引 近似最近邻",
+      "source": null,
+      "topic": "vector-search",
+      "total": 3,
+      "results": [
+        {
+          "rank": 1,
+          "title": "嵌入模型选型笔记",
+          "source": "note",
+          "topic": "vector-search",
+          "text": "课程笔记：嵌入模型决定向量空间的语义表达能力，中英文混合场景要关注模型对中文短语和专业术语的区分度；检索前统一做归一化，能让余弦相似度比较更稳定。",
+          "distance": 0.5781,
+          "ft_score": 0.4698,
+          "rrf": 0.03252,
+          "vector_rank": 1,
+          "fulltext_rank": 2
+        },
+        {
+          "rank": 2,
+          "title": "向量相似度检索方法",
+          "source": "paper",
+          "topic": "vector-search",
+          "text": "向量相似度检索先用嵌入模型把文本映射为高维向量，再用余弦距离或欧氏距离衡量相近程度；近似最近邻索引在大规模语料上以少量精度损失换取更快的检索速度。",
+          "distance": 0.6354,
+          "ft_score": 4.5421,
+          "rrf": 0.03227,
+          "vector_rank": 3,
+          "fulltext_rank": 1
+        },
+        {
+          "rank": 3,
+          "title": "实验记录：IVF 与 HNSW 对比",
+          "source": "lab",
+          "topic": "vector-search",
+          "text": "实验记录：IVF_FLAT 通过聚类分桶缩小候选范围，构建快、内存占用低；HNSW 图索引查询更平滑，但构建成本更高。小数据集上两者差距不大，规模增大后召回与延迟差异才明显。",
+          "distance": 0.6109,
+          "ft_score": 0.4198,
+          "rrf": 0.03175,
+          "vector_rank": 2,
+          "fulltext_rank": 4
+        }
+      ]
+    },
+    {
+      "mode": "vector",
+      "query": "实验记录 周报 模板",
+      "source": null,
+      "topic": null,
+      "total": 3,
+      "results": [
+        {
+          "rank": 1,
+          "title": "索引与查询计划实验记录",
+          "source": "lab",
+          "topic": "database",
+          "text": "实验记录：为大表增加合适的二级索引后，等值查询耗时明显下降；但索引会拖慢写入，需要在读写比例之间权衡。本次对比了全表扫描、主键索引和联合索引三种计划。",
+          "distance": 0.5132,
+          "ft_score": null,
+          "rrf": null,
+          "vector_rank": 1,
+          "fulltext_rank": null
+        },
+        {
+          "rank": 2,
+          "title": "机器学习评估指标笔记",
+          "source": "note",
+          "topic": "machine-learning",
+          "text": "课程笔记：分类问题常用精确率、召回率和 F1 值评估；检索系统可以用召回率、平均倒数排名和命中率衡量，只看排序靠前的几条结果容易高估系统表现。",
+          "distance": 0.515,
+          "ft_score": null,
+          "rrf": null,
+          "vector_rank": 2,
+          "fulltext_rank": null
+        },
+        {
+          "rank": 3,
+          "title": "事务隔离级别梳理",
+          "source": "note",
+          "topic": "database",
+          "text": "事务隔离级别由低到高是读未提交、读已提交、可重复读、串行化，分别解决脏读、不可重复读和幻读问题；关系型数据库默认级别需要结合业务一致性要求选择。",
+          "distance": 0.5269,
+          "ft_score": null,
+          "rrf": null,
+          "vector_rank": 3,
+          "fulltext_rank": null
+        }
+      ]
+    },
+    {
+      "mode": "fulltext",
+      "query": "倒排索引 全文检索",
+      "source": "paper",
+      "topic": null,
+      "total": 2,
+      "results": [
+        {
+          "rank": 1,
+          "title": "向量相似度检索方法",
+          "source": "paper",
+          "topic": "vector-search",
+          "text": "向量相似度检索先用嵌入模型把文本映射为高维向量，再用余弦距离或欧氏距离衡量相近程度；近似最近邻索引在大规模语料上以少量精度损失换取更快的检索速度。",
+          "distance": null,
+          "ft_score": 0.6217,
+          "rrf": null,
+          "vector_rank": null,
+          "fulltext_rank": 1
+        },
+        {
+          "rank": 2,
+          "title": "检索增强生成 RAG 综述",
+          "source": "paper",
+          "topic": "rag",
+          "text": "检索增强生成系统先把文档切分成片段，为每个片段生成向量存入向量数据库；用户提问时先做语义检索召回相关上下文，再交给大模型据此生成答案，从而降低幻觉并保留可追溯的出处。",
+          "distance": null,
+          "ft_score": 0.1809,
+          "rrf": null,
+          "vector_rank": null,
+          "fulltext_rank": 2
+        }
+      ]
+    }
+  ]
+}

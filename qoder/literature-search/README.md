@@ -27,7 +27,7 @@ LitSeek 把这些资料导入 seekdb，同时建立向量索引与中文全文�
 ### 1.3 项目演示与代码仓库
 
 - 项目展示网站（Qoder Sites 公开发布）：https://litseek-demo-kgb0khpkzds.qoder.zone/ 。站点首屏复用现有应用界面，以内置 18 条示例数据做浏览器只读演示；静态站点不承载后端，完整 seekdb 混合检索按第 4、5 节在本地复现。
-- 代码仓库：待导入基线并推送私有仓库后填写（评审通过 `user:token` 形式的 clone 地址访问）。
+- 代码仓库：https://github.com/333yeah/qoder-literature-search （公开仓库，默认分支 `2026-competition-ecosystem`）。
 - 本地运行与复现步骤见本文第 4、5 节；完整验证样例见 `docs/validation-samples.md`。
 
 ### 1.4 Qoder 开发说明（对应赛题「项目必须使用 Qoder 开发」）
@@ -59,7 +59,7 @@ LitSeek 把这些资料导入 seekdb，同时建立向量索引与中文全文�
 
 ### 4.1 运行环境
 
-- 操作系统：Windows / macOS / Linux 均可（本项目在 Windows 11 + Python 3.11 上完成实测）
+- 操作系统：Windows / macOS / Linux 均可（本项目在 Windows 11 + Python 3.13.16 上完成实测）
 - Python：3.11 及以上（依赖见 `requirements.txt`）
 
 ### 4.2 创建虚拟环境并安装依赖

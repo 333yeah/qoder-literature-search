@@ -8,7 +8,7 @@
 | # | 平台材料 | 状态 | 一句话结论 |
 |---|---|---|---|
 | 1 | 项目网站网址 | ✅ | 已公开发布、未登录可访问；仅缺仓库链接回填后的二次发布 |
-| 2 | 代码仓库 | ❌ | 本地代码就绪，但尚未创建 GitHub 私有仓库、尚未推送、无评审 clone 地址 |
+| 2 | 代码仓库 | ✅ | 公开仓库已创建推送（commit `0625a3e`，68 文件）；待回填 README 与站点链接 |
 | 3 | 运行说明 | 🟡 | README 步骤完整；待补实测 Python 与依赖版本口径，并修正 Python 版本描述 |
 | 4 | 验证样例 | 🟡 | 6 组用例与初始数据齐全；把被忽略日志的证据出处改为已入库截图 / JSON |
 | 5 | Qoder 开发记录 | ✅ | 阶段 0–7 截图 10 张 + 首轮总结 + UID 均已齐；可选补后端修复与公开设置页各一张 |
@@ -31,35 +31,25 @@
 - 在 `@sites` 会话让 Qoder 更新页面后**再次点发布**，线上版本才会更新；
 - 留存 `dev-12-sites-publish.png`（发布成功 + 「任何人都可访问」设置页）；`dev-13-incognito.png` 已由 online-public 两张图覆盖，可再补一张无痕窗口完整首屏。
 
-## 2. 代码仓库 —— ❌ 未开始
+## 2. 代码仓库 —— ✅ 已创建并推送（2026-11-01）
 
 ### 现状
 
-- 本地基线：`powercontext` 仓库，分支 `2026-competition-ecosystem`，基线 commit `d647275`；
-- `origin` 指向官方只读仓库 `https://github.com/oceanbase/powercontext.git`，尚未添加自己的私有远程；
-- 项目目录 `qoder/literature-search/` 全部内容未提交；`git add --dry-run` 共 57 个候选文件；
-- 已确认被 `.gitignore` 排除：`.env`、`*.log`、`__pycache__/`、`.venv/`；待提交文件中真实 seekdb 主机 / 账号 / 密码 0 命中。
+- **公开仓库**：https://github.com/333yeah/qoder-literature-search （visibility=public，默认分支 `2026-competition-ecosystem`）；
+- 本地基线：`powercontext`，分支 `2026-competition-ecosystem`（基线 commit `d647275`，项目提交 `0625a3e`）；
+- 远程：`origin` = 个人公开仓库，`upstream` = 官方 `oceanbase/powercontext.git`；
+- 项目目录 `qoder/literature-search/` 共 **68 个文件**已提交并推送（commit `0625a3e`）；
+- 已确认被 `.gitignore` 排除：`.env`、`*.log`、`__pycache__/`、`.venv/`；待提交文件中真实 seekdb 主机 / 账号 / 密码 0 命中；
+- 未登录浏览器已复核仓库页面：Public、commit 与目录（qoder/literature-search）可见。
 
-### 需要用户提供
+### 平台填写
 
-1. GitHub 用户名；
-2. 新建私有仓库名称；
-3. 带 `repo` 权限的 Personal Access Token；
-4. git 提交显示用姓名与邮箱。
+- 评审 clone 地址（含 token）：`https://333yeah:<PAT>@github.com/333yeah/qoder-literature-search.git`
+- PAT 仅在平台表单与本次推送使用；提交后如不再需要可到 GitHub 设置中撤销，避免泄露风险。
 
-### 执行动作（阶段 C）
+### 待办
 
-1. GitHub Import Repository 导入 `oceanbase/powercontext`，仓库设为 **Private**；
-2. 本地配置 git 身份，添加自己的私有远程；
-3. 提交 `qoder/literature-search/`，推送 `2026-competition-ecosystem` 分支；
-4. 平台填写 `https://<用户名>:<token>@github.com/<owner>/<repo>.git` 形式 clone 地址；
-5. 用带 token 地址验证可 clone，用匿名地址验证不可访问。
-
-### 仓库内将包含的材料目录
-
-- 后端 `app/`、本地前端 `web/`、站点源文件 `site/`、脚本 `scripts/`、测试 `tests/`、语料 `data/`；
-- 文档 `docs/`（README、验证样例、检索记录、提示词、开发手册、截图与开发记录）；
-- 配置 `requirements.txt`、`.env.example`、`.gitignore`、Qoder Sites 产物描述文件。
+- README 1.3「代码仓库」占位行与站点「仓库与入口」区块回填真实仓库地址，由 Qoder 在会话内完成并重新发布站点。
 
 ## 3. 运行说明 —— 🟡 基本具备，待补版本口径
 

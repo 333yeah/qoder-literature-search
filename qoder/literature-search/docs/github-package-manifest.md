@@ -103,12 +103,12 @@
 2. 全仓搜索真实 seekdb 主机、用户名、密码，0 命中；
 3. `.env.example` 保持占位符，不含真实凭据；
 4. 站点页面与文档中不出现真实连接信息；
-5. 仓库保持 **Private**；平台填写带 PAT 的 `https://<用户名>:<token>@github.com/<owner>/<repo>.git` clone 地址，token 本身不写进任何仓库文件；
+5. 仓库为**公开**（Public，符合赛题「公开或向评审开放访问权限」）；平台填写带 PAT 的 `https://333yeah:<PAT>@github.com/333yeah/qoder-literature-search.git` clone 地址，token 本身不写进任何仓库文件；
 6. 推送后用带 token 地址验证可 clone，用匿名地址验证不可访问。
 
-## 4. 当前入库文件统计（`git add --dry-run`）
+## 4. 当前入库文件统计（已提交 commit `0625a3e`）
 
-当前共 **58 个文件**，按目录分组：
+共 **68 个文件**，按目录分组：
 
 | 目录 / 文件 | 数量 |
 |---|---|
@@ -118,14 +118,14 @@
 | `tests/` 测试与验证脚本 | 4 |
 | `data/` 示例语料 | 1 |
 | `site/` 站点源文件 + 截图 | 10 |
-| `docs/` 文档、提示词、验证样例、截图与开发记录 | 26 |
+| `docs/` 文档、提示词、验证样例、截图与开发记录 | 36 |
 | 根目录配置与证据（`README.md`、`requirements.txt`、`.env.example`、`.gitignore`、`.LitSeek Demo.qoder.site`、`IMPLEMENTATION_SUMMARY.txt`） | 6 |
 
-## 5. 推送顺序（阶段 C）
+## 5. 推送状态（2026-11-01 已完成）
 
-1. GitHub 按官方使用说明 Import `oceanbase/powercontext` 为自己的 **Private** 仓库；
-2. 本地配置 git 用户名与邮箱；
-3. 添加远程地址，提交 `qoder/literature-search/`；
-4. 推送 `2026-competition-ecosystem` 分支；
-5. 生成带 `repo` 权限的 PAT，组装平台用 clone 地址；
-6. 回到站点「仓库与入口」区块填入真实仓库链接，再次发布站点。
+1. ✅ 公开仓库已创建：`333yeah/qoder-literature-search`（visibility=public，默认分支 `2026-competition-ecosystem`）；
+2. ✅ 本地 git 身份已配置（user.name=333yeah，user.email=2990961464@qq.com，仓库级）；
+3. ✅ 远程：`origin` = 个人公开仓库，`upstream` = 官方 `oceanbase/powercontext.git`；
+4. ✅ 提交并推送：commit `0625a3e`，68 个文件，分支 `2026-competition-ecosystem`；
+5. ✅ PAT（`repo` 权限）已用于创建仓库与推送，未写入任何文件；平台 clone 地址：`https://333yeah:<PAT>@github.com/333yeah/qoder-literature-search.git`；
+6. ⏳ 待办：在 Qoder 会话内把站点「仓库与入口」区块与 README 1.3 回填真实仓库地址，并再次发布站点。

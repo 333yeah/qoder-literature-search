@@ -123,9 +123,9 @@
 
 ## 5. 推送状态（2026-11-01 已完成）
 
-1. ✅ 公开仓库已创建：`333yeah/qoder-literature-search`（visibility=public，默认分支 `2026-competition-ecosystem`）；
-2. ✅ 本地 git 身份已配置（user.name=333yeah，user.email=2990961464@qq.com，仓库级）；
-3. ✅ 远程：`origin` = 个人公开仓库，`upstream` = 官方 `oceanbase/powercontext.git`；
-4. ✅ 提交并推送：commit `0625a3e`，68 个文件，分支 `2026-competition-ecosystem`；
-5. ✅ PAT（`repo` 权限）已用于创建仓库与推送，未写入任何文件；平台 clone 地址：`https://333yeah:<PAT>@github.com/333yeah/qoder-literature-search.git`；
-6. ⏳ 待办：在 Qoder 会话内把站点「仓库与入口」区块与 README 1.3 回填真实仓库地址，并再次发布站点。
+1. ✅ **比赛仓库已提交**：`LiuMingyang-1/powercontext-2026`（私有，333yeah 为协作者），分支 `2026-competition-ecosystem` = `516c4db`，3 个 commit 全部推送（用 333yeah repo 权限 classic token，`ls-remote` 已验证）；
+2. ✅ 公开仓库已创建：`333yeah/qoder-literature-search`（visibility=public，默认分支 `2026-competition-ecosystem`），已同步全部 commit；
+3. ✅ 本地 git 身份已配置（user.name=333yeah，user.email=2990961464@qq.com，仓库级）；
+4. ✅ 远程：`origin` = 个人公开仓库，`upstream` = 官方 `oceanbase/powercontext.git`；
+5. ✅ PAT（333yeah repo 权限）仅用于创建仓库与推送，未写入任何文件；平台 clone 地址：`https://333yeah:<PAT>@github.com/LiuMingyang-1/powercontext-2026.git`；
+6. ⏳ 待办：站点「仓库与入口」区块已在 Qoder 会话内回填公开仓库地址，但线上仍为占位文字，需在 Qoder Sites 面板**重新发布**。
